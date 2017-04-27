@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class ConsumerMain {
     public static final String KAFKA_TOPIC = "topic_1";
 
-    private static final String BROKERS_ADDRESS = "172.18.55.21:2181,172.18.55.21:2182";
+    private static final String ZOOKEEPER_ADDRESS = "172.18.55.21:2181,172.18.55.21:2182";
 
     private static final int THREADS_NUM = 1;
 
@@ -38,7 +38,7 @@ public class ConsumerMain {
      */
     private ConsumerConfig buildProperties() {
         Properties props = new Properties();
-        props.put("zookeeper.connect", BROKERS_ADDRESS);
+        props.put("zookeeper.connect", ZOOKEEPER_ADDRESS);
         props.put("group.id", "test_group");
 
         props.put("zookeeper.session.timeout.ms", "10000");
